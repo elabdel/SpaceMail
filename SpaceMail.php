@@ -41,7 +41,6 @@ class SpaceMail {
     }
     
     //Set Procentaje
-    //Set Unidad
     public function setProcentaje($procentaje=NULL) {
         if (isset($procentaje)) {
             $this->procentaje = $procentaje;
@@ -112,8 +111,8 @@ class SpaceMail {
         }
     }
 
-    //Set destinario
-    public function setDestinario($destinatario = NULL) {
+    //Set Destinatario
+    public function setDestinatario($destinatario = NULL) {
         if (isset($destinatario)) {
             $this->destinatario = $destinatario;
         } else {
@@ -121,7 +120,7 @@ class SpaceMail {
         }
     }
 
-    //Set remitente
+    //Set Remitente
     public function setRemitente($remitente = NULL) {
         if (isset($remitente)) {
             $this->remitente = $remitente;
@@ -130,7 +129,7 @@ class SpaceMail {
         }
     }
 
-    //Set asunto
+    //Set Asunto
     public function setAsunto($asunto = NULL) {
         if (isset($asunto)) {
             $this->asunto = $asunto;
@@ -165,7 +164,7 @@ class SpaceMail {
         return $this->dev;
     }
     
-    //Get Unidad
+    //Get Procentaje
     private function getProcentaje() {
         return $this->procentaje;
     }
@@ -205,7 +204,7 @@ class SpaceMail {
         return $this->destinatario;
     }
 
-    //Get remitente
+    //Get Remitente
     private function getRemitente() {
         return $this->remitente;
     }
@@ -242,6 +241,7 @@ class SpaceMail {
         $texto .= "<br>";
         if ($this->procentajeUsado >= $this->getProcentaje()) {
             $texto .= "El procentaje de de uso es mayor que el " . $this->getProcentaje(). " % <br>";
+            echo $texto;
             $this->setTexto($texto);
             $this->enviarMail();
         } else {
